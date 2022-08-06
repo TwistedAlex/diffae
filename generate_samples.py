@@ -21,5 +21,5 @@ pathlib.Path(output_path).mkdir(parents=True, exist_ok=True)
 count = 0
 for idx in range(1000):
     img = model.sample(1, device=device, T=20, T_latent=200)
-    PIL.Image.fromarray(img[0].permute(1, 2, 0).cpu().numpy(), 'RGB').save(output_path + f'{str(count).zfill(5)}' + '.png')
+    PIL.Image.fromarray(img[0].cpu().permute([1, 2, 0]).numpy(), 'RGB').save(output_path + f'{str(count).zfill(5)}' + '.png')
     count = count + 1
