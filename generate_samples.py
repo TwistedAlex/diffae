@@ -24,5 +24,4 @@ for idx in range(1000):
     print(img.shape)
     print(img)
     PIL.Image.fromarray((img[0].permute([1, 2, 0]).cpu().detach().numpy() * 255).astype(np.uint8), 'RGB').save(output_path + f'{str(count).zfill(5)}' + '.png')
-    exit(1)
     count = count + 1
