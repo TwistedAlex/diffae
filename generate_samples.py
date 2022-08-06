@@ -5,7 +5,7 @@ import matplotlib.pyplot as plt
 import pathlib
 
 device = 'cuda:0'
-conf = ffhq128_autoenc_latent()
+conf = ffhq256_autoenc_latent()
 conf.T_eval = 100
 conf.latent_T_eval = 100
 # print(conf.name)
