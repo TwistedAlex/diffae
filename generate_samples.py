@@ -22,6 +22,7 @@ count = 0
 for idx in range(1000):
     img = model.sample(1, device=device, T=20, T_latent=200)
     print(img.shape)
-    PIL.Image.fromarray(img[0].cpu().permute([1, 2, 0]).numpy() * 255, 'RGB').save(output_path + f'{str(count).zfill(5)}' + '.png')
+    PIL.Image.fromarray(img[0].permute([1, 2, 0]).cpu().detach().numpy().astype(
+        np.uint8), 'RGB').save(output_path + f'{str(count).zfill(5)}' + '.png')
     exit(1)
     count = count + 1
