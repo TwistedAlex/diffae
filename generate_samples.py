@@ -10,7 +10,7 @@ conf.T_eval = 100
 conf.latent_T_eval = 100
 # print(conf.name)
 model = LitModel(conf)
-state = torch.load(f'checkpoints/{conf.name}/last.ckpt', map_location='cpu')
+state = torch.load('last.ckpt', map_location='cpu')
 print(model.load_state_dict(state['state_dict'], strict=False))
 model.to(device);
 
